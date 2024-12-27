@@ -1,6 +1,6 @@
 structure: <br />
 -node:<br />
-&nbsp  -dockerfile<br />
-&nbsp  -docker-compose<br />
-&nbsp  -client:<br />
-&nbsp &nbsp    -dockerfile<br />
+&ensp;  -dockerfile<br />
+&ensp; -docker-compose<br />
+&ensp;  -client:<br />
+&ensp;&ensp;    -dockerfile<br />
