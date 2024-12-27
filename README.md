@@ -1,6 +1,6 @@
-structure:
--node:
-  -dockerfile
-  -docker-compose
-  -client:
-    -dockerfile
+structure: <br />
+-node:<br />
+  -dockerfile<br />
+  -docker-compose<br />
+  -client:<br />
+    -dockerfile<br />
