@@ -1,0 +1,49 @@
+version: '3.8'
+services:
+  hazelcast-node-1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hazelcast-node-1
+    networks:
+      - hazelcast-network
+    environment:
+      - HAZELCAST_MEMBER=true
+
+  hazelcast-node-2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hazelcast-node-2
+    networks:
+      - hazelcast-network
+    environment:
+      - HAZELCAST_MEMBER=true
+
+  hazelcast-node-3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hazelcast-node-3
+    networks:
+      - hazelcast-network
+    environment:
+      - HAZELCAST_MEMBER=true
+
+  hazelcast-client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: hazelcast-client
+    networks:
+      - hazelcast-network
+    environment:
+      - HAZELCAST_ADDRESSES=hazelcast-node-1:5701,hazelcast-node-2:5701,hazelcast-node-3:5701
+    depends_on:
+      - hazelcast-node-1
+      - hazelcast-node-2
+      - hazelcast-node-3
+
+networks:
+  hazelcast-network:
+    driver: bridge

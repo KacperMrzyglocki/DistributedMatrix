@@ -1,0 +1,4 @@
+org\example\TaskExecutor.class
+org\example\TaskExecutorNode$HazelcastInstanceHolder.class
+org\example\TaskExecutor$MatrixMultiplicationTask.class
+org\example\TaskExecutorNode.class
